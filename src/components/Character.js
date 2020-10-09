@@ -5,7 +5,7 @@ import styled from "styled-components";
 const StyledCharacter = styled.div`
   background-color: white;
   border-radius: 7px;
-  width: 60%;
+  width: 30%;
   padding: 3%;
   margin: 3% auto;
 
