@@ -8,6 +8,11 @@ const StyledCharacter = styled.div`
   width: 60%;
   padding: 3%;
   margin: 3% auto;
+
+  h1,
+  h3 {
+    text-transform: capitalize;
+  }
 `;
 
 export default function Character(props) {
