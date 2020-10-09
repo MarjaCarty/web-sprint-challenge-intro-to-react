@@ -2,6 +2,23 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import axios from "axios";
 import Character from "./components/Character";
+import styled from "styled-components";
+
+const StyledButton = styled.button`
+  border: none;
+  border-radius: 3px;
+  padding: 1%;
+  margin: 1% auto;
+  cursor: pointer;
+`;
+
+const StyledHeader = styled.h1`
+  background-color: white;
+  border-radius: 3px;
+  padding: 1%;
+  width: 60%;
+  margin: 3% auto;
+`;
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -41,32 +58,12 @@ const App = () => {
       setPokemonData(finalData);
       console.log(finalData);
     });
-    //     .then((res) => {
-    //       const data = {
-    //         id: res.data.id,
-    //         name: res.data.name,
-    //         sprite: res.data.sprites.front_default,
-    //         type1: res.data.types[0].type.name,
-    //         type2: res.data.types[1] ? res.data.types[1].type.name : null,
-    //       };
-    //       return data;
-    //     })
-    //     .then((res) => {
-    //       finalData.push(res);
-    //     })
-    //     .catch((err) => {
-    //       console.log(err);
-    //     });
-    // });
-    // console.log(finalData);
-    // setPokemonData(finalData);
-    // console.log(pokemonData);
   }, [pokemonIds]);
 
   return (
     <div className="App">
-      <button onClick={generator}>Generate Pokemon</button>
-      <h1 className="Header">Characters</h1>
+      <StyledButton onClick={generator}>Generate Pokemon</StyledButton>
+      <StyledHeader className="Header">Characters</StyledHeader>
       {pokemonData.map((pokemon) => {
         return (
           <Character
